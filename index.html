@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>IT-специалист | Услуги и портфолио</title>
+  
+  <!-- SEO мета-теги -->
+  <meta name="description" content="Профессиональные IT-услуги и образовательные работы под ключ. Рефераты, курсовые, сайты, DevOps, SSL.">
+  <meta name="keywords" content="IT услуги, DevOps, разработка сайтов, курсовые, диплом, SSL">
+  <meta name="author" content="IT-эксперт">
+  
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* ===== СБРОС И ПЕРЕМЕННЫЙ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --deep-navy: #0A1428;
+      --rich-blue: #0F1E3A;
+      --accent-glow: #3B82F6;
+      --accent-soft: #60A5FA;
+      --indigo: #6366F1;
+      --text-bright: #F0F9FF;
+      --text-soft: #CBD5E1;
+      --glass-bg: rgba(15, 30, 58, 0.8);
+      --glass-border: rgba(59, 130, 246, 0.25);
+      --card-bg: rgba(17, 34, 64, 0.8);
+      --gradient-blue: linear-gradient(145deg, #0F1F35, #162B48);
+      --terminal-green: #10B981;
+      --code-blue: #38BDF8;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--deep-navy);
+      color: var(--text-bright);
+      line-height: 1.5;
+      font-size: 16px;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    /* ===== КОНТЕЙНЕР - АДАПТИВ ===== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== СЕКЦИИ ===== */
+    section {
+      padding: 60px 0;
+      position: relative;
+      width: 100%;
+    }
+
+    /* ===== ФОН - ТОЛЬКО ДЛЯ ДЕСКТОПА ===== */
+    @media (min-width: 1024px) {
+      .working-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .terminal {
+        position: absolute;
+        top: 15%;
+        left: 3%;
+        width: 360px;
+        background: rgba(10, 20, 30, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 12px;
+        padding: 16px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+      }
+
+      .server-rack {
+        position: absolute;
+        bottom: 10%;
+        right: 3%;
+        display: flex;
+        gap: 6px;
+      }
+
+      .server {
+        width: 50px;
+        height: 160px;
+        background: linear-gradient(145deg, #1E293B, #0F172A);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 6px;
+      }
+
+      .binary-rain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+      }
+    }
+
+    /* ===== ТИПОГРАФИЯ - АДАПТИВ ===== */
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.1;
+      font-weight: 800;
+      background: linear-gradient(to right, #FFFFFF, #E0F2FE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(to right, #FFFFFF, #BAE6FD);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-glow), var(--indigo));
+      border-radius: 4px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 80vh;
+      width: 100%;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      color: var(--text-soft);
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    /* ===== КНОПКИ ===== */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2563EB, #4F46E5);
+      color: white;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      width: fit-content;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* ===== ОБО МНЕ ===== */
+    .about-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 30px;
+      border-left: 6px solid var(--accent-glow);
+      width: 100%;
+    }
+
+    .about-card p {
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      color: #E2E8F0;
+    }
+
+    /* ===== КАРТОЧКИ УСЛУГ ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .service-card i {
+      font-size: 2.2rem;
+      background: linear-gradient(145deg, #93C5FD, #2563EB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .service-card p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* ===== ПРЕИМУЩЕСТВА ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .features-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .feature-item {
+      background: rgba(17, 36, 59, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(59,130,246,0.2);
+      padding: 20px 12px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-item i {
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #93C5FD, #3B82F6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .feature-item span {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    /* ===== КОНТАКТЫ ===== */
+    .contact-direct {
+      background: var(--gradient-blue);
+      border-radius: 28px;
+      padding: 40px 24px;
+      border: 1px solid rgba(59,130,246,0.35);
+      width: 100%;
+    }
+
+    .contact-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .contact-flex {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    .contact-card {
+      background: rgba(10, 25, 45, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 28px 20px;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
+    }
+
+    .contact-card i {
+      font-size: 2.5rem;
+      background: linear-gradient(145deg, #60A5FA, #2563EB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .contact-handle {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      margin: 8px 0;
+      word-break: break-word;
+    }
+
+    .contact-label {
+      color: var(--accent-soft);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .contact-description {
+      margin-top: 30px;
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 1.1rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 30px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #070E1A;
+      padding: 40px 0;
+      border-top: 1px solid rgba(59,130,246,0.2);
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-icons {
+      display: flex;
+      gap: 30px;
+      font-size: 2rem;
+    }
+
+    .footer-icons a {
+      color: #94A3B8;
+      transition: 0.3s;
+    }
+
+    .footer-icons a:hover {
+      color: var(--accent-glow);
+      transform: translateY(-5px);
+    }
+
+    .footer-text {
+      color: #9AB3D0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0 20px;
+    }
+
+    /* ===== УТИЛИТЫ ===== */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== ФОН ТОЛЬКО ДЛЯ ДЕСКТОПА ===== -->
+  <div class="working-bg">
+    <div class="terminal">
+      <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(59,130,246,0.3);">
+        <span style="width: 10px; height: 10px; background: #EF4444; border-radius: 50%;"></span>
+        <span style="width: 10px; height: 10px; background: #F59E0B; border-radius: 50%;"></span>
+        <span style="width: 10px; height: 10px; background: #10B981; border-radius: 50%;"></span>
+        <span style="color: var(--text-soft); font-size: 11px; margin-left: 6px;">ahmedov000g@devops:~/project</span>
+      </div>
+      <div style="margin-bottom: 6px;">
+        <span style="color: var(--terminal-green);">$</span>
+        <span style="color: var(--code-blue); margin-left: 6px;">git deploy --production</span>
+      </div>
+      <div style="color: #94A3B8; margin-left: 16px; font-size: 11px;">▶ Building Docker images...</div>
+      <div style="color: #94A3B8; margin-left: 16px; font-size: 11px;">✓ CI/CD pipeline started</div>
+      <div style="margin-top: 8px;">
+        <span style="color: var(--terminal-green);">$</span>
+        <span style="color: var(--code-blue); margin-left: 6px;">npm run build</span>
+        <span style="display: inline-block; width: 6px; height: 14px; background: var(--terminal-green); margin-left: 4px; animation: blink 1s infinite;"></span>
+      </div>
+    </div>
+
+    <div class="server-rack">
+      <div class="server">
+        <div style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; margin: 12px 0 0 10px; box-shadow: 0 0 8px #10B981;"></div>
+        <div style="width: 6px; height: 6px; background: #EF4444; border-radius: 50%; margin: 6px 0 0 10px;"></div>
+      </div>
+      <div class="server">
+        <div style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; margin: 12px 0 0 10px; box-shadow: 0 0 8px #10B981;"></div>
+        <div style="width: 6px; height: 6px; background: #EF4444; border-radius: 50%; margin: 6px 0 0 10px;"></div>
+      </div>
+      <div class="server">
+        <div style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; margin: 12px 0 0 10px; box-shadow: 0 0 8px #10B981;"></div>
+        <div style="width: 6px; height: 6px; background: #EF4444; border-radius: 50%; margin: 6px 0 0 10px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+  <main style="width: 100%; overflow-x: hidden;">
+    <!-- HERO -->
+    <section id="hero">
+      <div class="container hero">
+        <h1>Профессиональные работы и IT‑услуги под ключ</h1>
+        <p>Рефераты, доклады, презентации, курсовые, дипломные работы, сайты и DevOps-автоматизация</p>
+        <a href="#contact-now" class="btn">Связаться сейчас</a>
+      </div>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section id="about">
+      <div class="container">
+        <h2>Обо мне</h2>
+        <div class="about-card">
+          <p>Я занимаюсь подготовкой учебных и профессиональных работ, а также IT-разработкой. Берусь за задачи любой сложности, соблюдаю сроки и требования. Современные технологии, полная конфиденциальность и результат, который превосходит ожидания.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section id="services">
+      <div class="container">
+        <h2>Услуги</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-book-open"></i>
+            <h3>Рефераты и доклады</h3>
+            <p>Любая тематика, уникальность 80%+, оформление по ГОСТ/APA. Глубокий анализ источников.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-chart-pie"></i>
+            <h3>Презентации</h3>
+            <p>PowerPoint / Google Slides. Стильный дизайн, инфографика, анимация, структурирование.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Курсовые и дипломы</h3>
+            <p>Технические и гуманитарные направления. Расчёты, чертежи, презентации, речь.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-code"></i>
+            <h3>Разработка веб‑сайтов</h3>
+            <p>Адаптивные лендинги, корпоративные порталы, интернет-магазины. Чистый код, высокая скорость.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-cogs"></i>
+            <h3>DevOps‑автоматизация</h3>
+            <p>CI/CD, Docker, Kubernetes, настройка серверов, инфраструктура как код.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-lock"></i>
+            <h3>SSL / Безопасность</h3>
+            <p>Установка, замена, продление SSL-сертификатов. Let's Encrypt, Comodo. Устранение ошибок.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section id="why-me">
+      <div class="container">
+        <h2>Почему выбирают меня</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <i class="fas fa-user-check"></i>
+            <span>Индивидуальный подход</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-calendar-check"></i>
+            <span>Соблюдение сроков</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Конфиденциальность</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-microchip"></i>
+            <span>Современные технологии</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-headset"></i>
+            <span>Поддержка после сдачи</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contact-now">
+      <div class="container">
+        <h2>Свяжитесь напрямую</h2>
+        <div class="contact-direct">
+          <div class="contact-flex">
+            <div class="contact-card" onclick="window.open('https://t.me/ahmedov000g', '_blank')">
+              <i class="fab fa-telegram-plane"></i>
+              <div class="contact-label">TELEGRAM</div>
+              <div class="contact-handle">@ahmedov000g</div>
+              <div style="color: #9AB3D0; margin-top: 6px; font-size: 0.9rem;">пишите в любое время</div>
+            </div>
+            <div class="contact-card" onclick="window.open('https://t.me/devpenguin', '_blank')">
+              <i class="fab fa-telegram-plane"></i>
+              <div class="contact-label">TELEGRAM</div>
+              <div class="contact-handle">@devpenguin</div>
+              <div style="color: #9AB3D0; margin-top: 6px; font-size: 0.9rem;">быстрый ответ по DevOps</div>
+            </div>
+            <div class="contact-card" onclick="window.location.href='mailto:jacobdevops@gmail.com'">
+              <i class="fas fa-envelope"></i>
+              <div class="contact-label">EMAIL</div>
+              <div class="contact-handle" style="font-size: 1.2rem;">jacobdevops@gmail.com</div>
+              <div style="color: #9AB3D0; margin-top: 6px; font-size: 0.9rem;">отвечу в течение часа</div>
+            </div>
+          </div>
+          <div class="contact-description">
+            ✦ Напишите мне в Telegram или на почту — опишите задачу, и я сразу приступлю ✦
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-text">
+          Свяжитесь со мной для обсуждения вашего проекта
+        </div>
+        <div class="footer-icons">
+          <a href="https://t.me/ahmedov000g" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+          <a href="https://t.me/devpenguin" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="mailto:jacobdevops@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <div style="color: #5F7D9C; font-size: 0.85rem;">
+          IT‑специалист · Образование · Разработка
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <style>
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    
+    .contact-card {
+      cursor: pointer;
+    }
+    
+    @media (max-width: 480px) {
+      .contact-handle {
+        font-size: 1.1rem !important;
+      }
+      .feature-item span {
+        font-size: 0.85rem;
+      }
+      .service-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+
+  <script>
+    // Плавный скролл
+    document.querySelector('.hero .btn')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#contact-now')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
